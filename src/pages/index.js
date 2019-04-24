@@ -67,3 +67,7 @@ class Index extends Component {
 }
 
 export default Index;
+
+// export default connect(({ count }) => ({
+//   count,
+// }))(Index);
