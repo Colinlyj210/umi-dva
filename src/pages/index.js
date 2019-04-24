@@ -1,25 +1,19 @@
+/**
+ * title: test
+ */
 import React, {Component} from 'react';
 import {Button} from 'antd';
 import {connect} from 'dva';
 import styles from './index.css';
+import Link from 'umi/link';
 
-
-interface IProps {
-  dispatch: any,
-  count: any,
-  loading: any,
-}
-
-interface IState {
-
-}
 
 @connect(({count, loading, tT}) => ({
   count,
   tT,
-  loading: loading.effects['count/query'],
+  loading: loading.effects['count/query']
 }))
-export default class Index extends Component<IProps, IState> {
+class Index extends Component {
 
   componentDidMount() {
     console.log(this.props);
@@ -52,7 +46,24 @@ export default class Index extends Component<IProps, IState> {
         <div>
           <Button loading={loading} onClick={this.queryAddNum} type="primary">获取数据增加</Button>
         </div>
+        <div>
+          <Link to="/test">/test</Link>
+        </div>
+        <div>
+          <Link to="/123/aa">/aa</Link>
+        </div>
+        <div>
+          <Link to="/test/test">/test/test</Link>
+        </div>
+        <div>
+          <Link to="/test/123">/test/123</Link>
+        </div>
+        <div>
+          <Link to="/test/index">/test/index</Link>
+        </div>
       </div>
     );
   }
 }
+
+export default Index;
